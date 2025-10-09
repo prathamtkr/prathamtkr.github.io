@@ -1,0 +1,103 @@
+/* --- Publications Page Specific Styles --- */
+
+/* This container is simpler than the main page, using a single column */
+.page-content {
+  padding-top: 4px;
+}
+
+.page-title {
+  font-size: 32px;
+  line-height: 1.2;
+  color: var(--text-heading);
+  margin: 0 0 48px 0;
+  font-weight: 700;
+}
+
+.publication-section {
+  margin-bottom: 48px;
+}
+
+.publication-type-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin: 0 0 24px 0;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 12px;
+}
+
+.publication-item {
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.publication-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.publication-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.publication-title a {
+  color: var(--text-heading);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.publication-title a:hover {
+  color: #0056b3; /* A standard link-blue for hover */
+}
+
+.publication-authors {
+  font-size: 15px;
+  margin: 0 0 8px 0;
+  color: var(--text-primary);
+}
+
+.publication-authors strong {
+  /* Your name is already bolded via the <strong> tag */
+  color: var(--text-heading);
+}
+
+.publication-venue {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.publication-venue em {
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+.publication-links {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.link-button {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background-color: #f9fafb; /* very light gray */
+  padding: 4px 10px;
+  border-radius: 99px; /* pill shape */
+  border: 1px solid var(--border-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.link-button:hover {
+  color: var(--text-heading);
+  border-color: #d1d5db; /* gray-300 */
+  background-color: #f3f4f6; /* slightly darker gray */
+}

@@ -1,0 +1,106 @@
+/* --- Portfolio Page Specific Styles --- */
+
+/* Re-using page-title from publications.css, but adding a subtitle style */
+.page-subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 75ch;
+  margin: -32px 0 48px 0;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 48px; /* Larger gap between projects */
+}
+
+.project-item {
+  display: grid;
+  grid-template-columns: 240px 1fr; /* Image column and Details column */
+  gap: 24px;
+  align-items: flex-start;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.project-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9; /* Common aspect ratio for thumbnails */
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: #f8fafc; /* Fallback color for images */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-image a:hover img {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.project-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.project-title a {
+  color: var(--text-heading);
+  text-decoration: none;
+}
+
+.project-title a:hover {
+  text-decoration: underline;
+}
+
+.project-description {
+  font-size: 15px;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background-color: #f1f5f9; /* slate-100 */
+  padding: 4px 10px;
+  border-radius: 99px; /* pill shape */
+}
+
+/* Re-using the .link-button style from publications.css, no new style needed */
+.project-links {
+  margin-top: auto; /* Pushes the links to the bottom */
+  padding-top: 8px;
+  display: flex;
+  gap: 10px;
+}
+
+
+/* --- Responsive styles for the portfolio page --- */
+@media (max-width: 768px) {
+  .project-item {
+    grid-template-columns: 1fr; /* Stack image on top of details */
+    gap: 20px;
+  }
+}

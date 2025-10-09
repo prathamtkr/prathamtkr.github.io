@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — Pratham Thakkar</title>
+  
+  <!-- Link to the main stylesheet first -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Link to the new portfolio-specific stylesheet -->
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+
+  <!-- Re-using the exact same header for consistency -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="index.html" class="header-logo">Pratham Thakkar</a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="publications.html">Publications</a>
+        <!-- The "active" class highlights the current page -->
+        <a href="portfolio.html" class="active">Portfolio</a>
+        <a href="#">Projects</a>
+        <a href="#">Blog Posts</a>
+        <a href="#" class="cv-button">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content area for the portfolio page -->
+  <div class="container">
+    <main class="page-content" role="main">
+      <h1 class="page-title">Engineering Projects</h1>
+
+      <div class="project-list">
+
+        <!-- Project Item 1 -->
+        <div class="project-item">
+          <div class="project-image">
+            <!-- Replace with your project image. Suggested size: 320x180 -->
+            <a href="#"><img src="static\helmet_poster.png" alt="Screenshot of Explainable AI Dashboard"></a>
+          </div>
+          <div class="project-details">
+            <h3 class="project-title"><a href="#">Helmet and Number plate detection system for on road safty</a></h3>
+            <p class="project-description">Project Supervisor: <strong>Dr. Gopal Singh Tandel</strong></p>
+            <p class="project-description">Aim of project was to design a pipeline to detect if a motorcycle driver is wearing helmet or not, if not then try to detect number plate from present multiple camera at a check point and extract the number from number plate using OCR (optical character recognition)</p>
+            <p class="project-description"><strong>Challenge:</strong> Match the person not wearing helmet accuractely with correct number plate, this was acheived to a satisfactory accuracy using a algorithm to calculate the angle of bike respective to camera and so that number plate could be captured from different camera angles</p>
+            <div class="project-tags">
+              <span class="tag">Deep Learning</span>
+              <span class="tag">Optical Character Recongnition</span>
+              <span class="tag">Algorithm</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Item 2 -->
+        <div class="project-item">
+          <div class="project-image">
+            <a href="#"><img src="static\crop.png" alt=""></a>
+          </div>
+          <div class="project-details">
+            <h3 class="project-title"><a href="#">AgriTech: AI-Powered Crop Advisory System</a></h3>
+            <p class="project-description">Project Supervisor: <strong>Dr. Jitendra Pratapsingh Mathur</strong></p>
+            <p class="project-description">Collaborated with a multidisciplinary team to develop an app and website enabling Indian farmers to enhance
+agricultural productivity through AI-powered insights.</p>
+            <p class="project-description">Built the machine learning pipeline, including the design and implementation of models for crop disease detection
+using computer vision techniques. Integrated geospatial data and climate trends to build predictive models
+suggesting optimal crops to grow based on location-specific conditions.</p>
+            <div class="project-tags">
+              <span class="tag">Deep Learning</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Data Visualization</span>
+              <span class="tag">Web Development</span>
+              <span class="tag">Mobile Development</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

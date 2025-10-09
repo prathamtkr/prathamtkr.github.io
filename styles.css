@@ -1,0 +1,324 @@
+/* --- CSS Variables and Global Styles --- */
+:root {
+  --bg: #ffffff;
+  --text-primary: #374151; /* gray-700 */
+  --text-secondary: #6b7280; /* gray-500 */
+  --text-heading: #111827;  /* gray-900 */
+  --border-color: #e5e7eb; /* gray-200 */
+  --button-bg: #1f2937; /* gray-800 */
+  --button-text: #ffffff;
+  --max-width: 980px;
+  --left-column-width: 240px;
+  --gap: 48px;
+  --sans-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--sans-font);
+  background-color: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Header and Navigation --- */
+.main-header {
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg);
+  padding: 0 24px;
+}
+
+.header-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.header-logo {
+  font-weight: 600;
+  color: var(--text-heading);
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.header-nav a {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.header-nav a:hover {
+  color: var(--text-heading);
+}
+
+/* Add this to your main styles.css file */
+
+.header-nav a.active {
+  color: var(--text-heading);
+  font-weight: 500;
+}
+
+/* This should already be in your main styles.css file */
+.header-nav a.active {
+  color: var(--text-heading);
+  font-weight: 500;
+}
+
+
+/* --- NEW: CV Button Styling --- */
+.cv-button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cv-button:hover {
+  background-color: #374151; /* A slightly lighter black */
+  color: var(--button-text) !important; /* Ensure text stays white on hover */
+}
+
+
+/* --- Main Layout --- */
+.container {
+  max-width: var(--max-width);
+  margin: 48px auto;
+  padding: 0 24px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: var(--left-column-width) 1fr;
+  gap: var(--gap);
+  align-items: start;
+}
+
+/* --- Left Column (Profile Sidebar) --- */
+.profile {
+  position: sticky;
+  top: 88px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+  border: 1px solid var(--border-color);
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin: 0 0 16px 0;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.link {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--text-heading);
+}
+
+.link svg {
+    opacity: 0.7;
+}
+
+/* --- Right Column (Main Content) --- */
+.content {
+  padding-top: 4px;
+}
+
+.intro-heading {
+  font-size: 24px;
+  line-height: 1.4;
+  color: var(--text-heading);
+  margin: 0 0 24px 0;
+  font-weight: 400;
+}
+
+.intro-paragraph {
+  margin: 0 0 20px 0;
+  max-width: 75ch;
+}
+
+strong {
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.section-title {
+  margin: 48px 0 16px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-heading);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 8px;
+}
+
+.interest-list {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.interest-list li {
+  margin-bottom: 12px;
+  padding-left: 4px;
+}
+
+
+/* --- NEW: Professional Experience Section --- */
+
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px; /* Space between each job experience */
+}
+
+.experience-item {
+  display: flex;
+  gap: 20px; /* Space between logo and text */
+  align-items: flex-start;
+}
+
+.experience-logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  object-fit: contain; /* Ensures logo isn't stretched */
+  background-color: white; /* For logos with transparency */
+}
+
+.experience-details {
+  flex: 1;
+}
+
+.experience-role {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin: 0;
+}
+
+.experience-company-date {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 2px 0 12px 0;
+}
+
+.experience-company-date strong {
+  color: var(--text-primary); /* Make company name slightly bolder */
+}
+
+.experience-description {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: disc;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.experience-description li {
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+
+.experience-description li::marker {
+  color: var(--text-secondary);
+}
+
+/* --- NEW: Beyond Research & Prose Section --- */
+
+.prose-section p {
+  margin: 0 0 20px 0;
+  max-width: 75ch; /* Keeps line length readable */
+  font-size: 16px; /* Explicitly set font size for this section */
+  color: var(--text-primary);
+}
+
+.prose-section em {
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.final-cta {
+  margin-top: 32px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.final-cta a {
+  color: var(--text-heading);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.final-cta a:hover {
+  border-bottom-color: var(--text-heading);
+}
+
+
+
+
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .profile {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .links {
+    align-items: center;
+  }
+  .main-header {
+    padding: 0 16px;
+  }
+  .container {
+    margin-top: 24px;
+    padding: 0 16px;
+  }
+  .header-nav {
+      gap: 16px;
+  }
+}
