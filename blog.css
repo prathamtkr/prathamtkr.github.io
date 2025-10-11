@@ -1,0 +1,129 @@
+/* --- Blog Page Specific Styles --- */
+
+/* === STYLES FOR THE BLOG LIST PAGE (blog.html) === */
+
+.blog-post-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border-color);
+}
+
+.blog-post-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 12px;
+  border-bottom: 1px solid var(--border-color);
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  flex-wrap: wrap; /* For mobile */
+  gap: 12px;
+}
+
+.blog-post-item:hover {
+  background-color: #f8fafc; /* A very light grey hover */
+}
+
+.blog-post-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-heading);
+  transition: color 0.2s ease;
+}
+
+.blog-post-item:hover .blog-post-title {
+  color: #0056b3; /* A standard link-blue on hover */
+}
+
+.blog-post-date {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font-size: 14px;
+  color: var(--text-secondary);
+  white-space: nowrap; /* Prevents date from wrapping */
+}
+
+/* === STYLES FOR SINGLE ARTICLE PAGES (in /posts/ folder) === */
+
+.blog-article {
+  max-width: 75ch; /* Optimal reading width */
+  margin: 0 auto; /* Center the article content */
+}
+
+.article-header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.article-title {
+  font-size: 36px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin: 0 0 12px 0;
+}
+
+.article-meta {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.blog-article h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin: 48px 0 20px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.blog-article h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin: 32px 0 16px 0;
+}
+
+.blog-article p {
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.blog-article ul,
+.blog-article ol {
+  margin-bottom: 24px;
+  padding-left: 24px;
+}
+
+.blog-article li {
+  margin-bottom: 10px;
+  line-height: 1.7;
+}
+
+.blog-article blockquote {
+  margin: 32px 0;
+  padding: 16px 24px;
+  border-left: 4px solid var(--border-color);
+  background-color: #f8fafc;
+  font-size: 16px;
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+.blog-article blockquote p {
+  margin-bottom: 0;
+}
+
+.blog-article pre {
+  background-color: #1f2937; /* Dark background for code */
+  color: #d1d5db; /* Light grey text */
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font-size: 14px;
+  margin-bottom: 24px;
+}

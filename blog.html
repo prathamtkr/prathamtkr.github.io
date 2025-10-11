@@ -1,24 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog | Pratham Thakkar</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog — Pratham Thakkar</title>
+  
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="blog.css">
 </head>
 <body>
-  <header>
-    <h1>Blog & Miscellaneous</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="research.html">Research</a>
-      <a href="blog.html">Blog</a>
-    </nav>
+
+  <!-- Re-using the exact same header for consistency -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="index.html" class="header-logo">Pratham Thakkar</a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="publications.html">Publications</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="#">Projects</a>
+        <!-- The "active" class highlights the current page -->
+        <a href="blog.html" class="active">Blog Posts</a>
+        <a href="#" class="cv-button">CV</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <p>This is where I share notes, reflections, and thoughts on AI, books, and personal learnings. Coming soon!</p>
-  </main>
+  <!-- Main content area for the blog list page -->
+  <div class="container">
+    <main class="page-content" role="main">
+      <h1 class="page-title">Writing & Ideas</h1>
+      <p class="page-subtitle">Thoughts on machine learning, technology, and navigating a career in research.</p>
+
+      <div class="blog-post-list">
+        
+        <!-- To add a new post, copy this 'a' block -->
+        <a href="posts/my-first-post.html" class="blog-post-item">
+          <span class="blog-post-title">My First Post: Why I'm Starting a Blog</span>
+          <time class="blog-post-date" datetime="2023-10-26">October 26, 2023</time>
+        </a>
+
+        <a href="posts/dissecting-f1-strategy.html" class="blog-post-item">
+          <span class="blog-post-title">Dissecting F1 Strategy with Python and Telemetry Data</span>
+          <time class="blog-post-date" datetime="2023-10-15">October 15, 2023</time>
+        </a>
+        
+        <a href="posts/explainable-ai-thoughts.html" class="blog-post-item">
+          <span class="blog-post-title">Initial Thoughts on Building Truly Explainable AI</span>
+          <time class="blog-post-date" datetime="2023-09-30">September 30, 2023</time>
+        </a>
+
+      </div>
+
+    </main>
+  </div>
+
 </body>
 </html>
