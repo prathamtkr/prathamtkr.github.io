@@ -132,6 +132,9 @@
 
 .transcript-section {
   margin-bottom: 48px; /* Space between different course categories */
+  max-width: 1400px; /* Increase max width for tables */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .transcript-section h2 {
@@ -142,52 +145,62 @@
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 24px; /* Space below table */
-  border: 1px solid var(--border-color); /* Add a border to the whole table */
+  border: 2px solid #d1d5db; /* Stronger outer border */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow for depth */
 }
 
 .transcript-table th,
 .transcript-table td {
-  padding: 12px 15px;
+  padding: 14px 18px; /* More generous padding */
   text-align: left;
-  border: 1px solid var(--border-color);
-  font-size: 15px; /* Slightly adjust font size for table content */
+  border: 1px solid #d1d5db; /* Visible cell borders */
+  font-size: 15px;
   color: var(--text-primary);
 }
 
 .transcript-table thead {
-  background-color: #f0f4f8; /* Light grey header background */
+  background-color: #e5e7eb; /* Slightly darker header for better contrast */
   color: var(--text-heading);
   font-weight: 600;
+  border-bottom: 2px solid #9ca3af; /* Stronger header border */
+}
+
+.transcript-table thead th {
+  border: 1px solid #9ca3af; /* Darker borders in header */
 }
 
 .transcript-table tbody tr:nth-child(even) {
-  background-color: #fdfefe; /* Very light subtle stripe */
+  background-color: #f9fafb; /* Light subtle stripe */
 }
 
 .transcript-table tbody tr:hover {
-  background-color: #eef2f5; /* Slightly darker hover effect for rows */
+  background-color: #e0f2fe; /* More visible hover effect */
+  transition: background-color 0.2s ease;
 }
 
 /* Specific styling for narrow columns like Credits and Grade */
 .transcript-table .col-code {
-    width: 15%;
+    width: 12%;
     white-space: nowrap; /* Prevent code from wrapping */
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 }
 
 .transcript-table .col-credits,
 .transcript-table .col-grade {
-    width: 7%;
+    width: 8%;
     text-align: center;
     white-space: nowrap;
+    font-weight: 500;
 }
 
 .transcript-table .col-exam-held {
     width: 10%;
     white-space: nowrap;
+    text-align: center;
 }
 
 .transcript-table .col-paper-type {
-    width: 8%;
+    width: 10%;
     text-align: center;
     white-space: nowrap;
 }
@@ -195,10 +208,14 @@
 /* CGPA Summary Styling */
 .cgpa-summary {
   background-color: #f8fafc;
-  border: 1px solid var(--border-color);
-  padding: 20px 24px;
+  border: 2px solid #d1d5db;
+  padding: 24px 28px;
   margin-bottom: 32px;
   border-radius: 8px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .cgpa-summary p {
@@ -221,7 +238,10 @@
 .grading-system {
   margin-top: 48px;
   padding-top: 24px;
-  border-top: 1px solid var(--border-color);
+  border-top: 2px solid var(--border-color);
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .grading-system h3 {
@@ -232,26 +252,32 @@
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 24px;
-  border: 1px solid var(--border-color);
+  border: 2px solid #d1d5db;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .grading-table th,
 .grading-table td {
-  padding: 10px 15px;
+  padding: 12px 15px;
   text-align: center;
-  border: 1px solid var(--border-color);
+  border: 1px solid #d1d5db;
   font-size: 14px;
   color: var(--text-primary);
 }
 
 .grading-table thead {
-  background-color: #f0f4f8;
+  background-color: #e5e7eb;
   color: var(--text-heading);
   font-weight: 600;
+  border-bottom: 2px solid #9ca3af;
+}
+
+.grading-table thead th {
+  border: 1px solid #9ca3af;
 }
 
 .grading-table tbody tr:nth-child(even) {
-  background-color: #fdfefe;
+  background-color: #f9fafb;
 }
 
 .grading-table td.grade-letter {
@@ -265,7 +291,22 @@
   line-height: 1.6;
 }
 
+/* Override blog-article max-width for transcript page */
+.blog-article.transcript-article {
+  max-width: 1400px; /* Much wider for tables */
+}
+
 /* Responsive table styling for smaller screens */
+@media screen and (max-width: 1200px) {
+  .transcript-section,
+  .cgpa-summary,
+  .grading-system {
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .transcript-table,
   .transcript-table thead,
@@ -284,15 +325,20 @@
 
   .transcript-table tr {
     margin-bottom: 15px;
-    border: 1px solid var(--border-color);
+    border: 2px solid #d1d5db;
+    border-radius: 4px;
   }
 
   .transcript-table td {
     border: none;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid #e5e7eb;
     position: relative;
     padding-left: 50%;
     text-align: right;
+  }
+
+  .transcript-table td:last-child {
+    border-bottom: none;
   }
 
   .transcript-table td:before {
