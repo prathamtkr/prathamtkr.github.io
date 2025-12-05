@@ -5,9 +5,56 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <!-- Change the title for each post -->
   <title>Your Post Title Here — Pratham Thakkar</title>
-  
+
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../blog.css">
+
+  <!-- Small PDF viewer styles (responsive) -->
+  <style>
+    /* PDF container: keeps the PDF responsive and visually integrated */
+    .pdf-wrapper {
+      margin: 1.5rem 0;
+    }
+    .pdf-toolbar {
+      display: flex;
+      gap: .5rem;
+      align-items: center;
+      margin-bottom: .5rem;
+      flex-wrap: wrap;
+    }
+    .pdf-actions {
+      margin-left: auto;
+      display: flex;
+      gap: .5rem;
+    }
+    .pdf-frame {
+      width: 100%;
+      height: 80vh; /* tall enough for reading; reduce if needed */
+      border: 1px solid #e6e6e6;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    }
+
+    /* On small screens, reduce height so footer is reachable */
+    @media (max-width: 700px) {
+      .pdf-frame { height: 60vh; }
+    }
+
+    /* Simple button look — relies on your site's typography/colors */
+    .btn {
+      display: inline-block;
+      padding: .4rem .75rem;
+      border-radius: 6px;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: #fff;
+      text-decoration: none;
+      font-size: .9rem;
+    }
+    .btn-primary {
+      background: #0b5fff;
+      color: #fff;
+      border-color: rgba(11,95,255,0.9);
+    }
+  </style>
 </head>
 <body>
 
@@ -32,9 +79,49 @@
           <h1 class="article-title">Your Post Title Here</h1>
           <p class="article-meta">Published on <time datetime="YYYY-MM-DD">Month Day, Year</time></p>
         </header>
-        
+
         <p>This is the first paragraph of your blog post. You can write your main content here. Use paragraphs to separate your ideas and make the text easy to read. <strong>Strong text</strong> and <em>emphasized text</em> are styled as well.</p>
-        
+
+        <h2>Embedded PDF (notes / supplementary material)</h2>
+        <p>Below is an embedded PDF. If the browser cannot show it inline, there are buttons to open or download the file.</p>
+
+        <!-- ===== PDF EMBED START ===== -->
+        <!-- Replace the path in data-pdf-path with your PDF relative path.
+             Example paths:
+               - ../assets/notes/myfile.pdf
+               - assets/notes/myfile.pdf
+               - myfile.pdf
+        -->
+        <div class="pdf-wrapper" aria-labelledby="pdf-section-heading">
+          <div class="pdf-toolbar" role="toolbar" aria-label="PDF actions">
+            <div id="pdf-section-heading" style="font-weight:600">Download / open PDF</div>
+            <div class="pdf-actions">
+              <!-- Open in new tab (viewer) -->
+              <a id="open-pdf" class="btn" href="../assets/notes/myfile.pdf" target="_blank" rel="noopener">Open in new tab</a>
+              <!-- Download link -->
+              <a id="download-pdf" class="btn" href="../assets/notes/myfile.pdf" download>Download PDF</a>
+              <!-- Fallback: raw GitHub URL note (display only) -->
+              <span style="align-self:center;font-size:.9rem;color:#666;margin-left:.5rem">If inline viewer fails, open in a new tab.</span>
+            </div>
+          </div>
+
+          <!-- Use <iframe> or <object> as fallback; both point to the same file path.
+               Many browsers will render the PDF inline. If not, the 'Open in new tab' link is the fallback.
+          -->
+          <iframe
+            id="pdfFrame"
+            class="pdf-frame"
+            src="../assets/notes_pdf/the_fundamentals_of_ai.pdf#toolbar=0&navpanes=0&scrollbar=0"
+            title="Supplementary PDF: notes"
+            aria-describedby="pdf-frame-desc">
+          </iframe>
+
+          <div id="pdf-frame-desc" style="margin-top:.6rem;font-size:.95rem;color:#444">
+            Can't view the PDF here? <a href="notes_pdf/the_fundamentals_of_ai.pdf" target="_blank" rel="noopener">Open it in a new tab</a> or <a href="../assets/notes/myfile.pdf" download>download it</a>.
+          </div>
+        </div>
+        <!-- ===== PDF EMBED END ===== -->
+
         <h2>This is a Subheading (h2)</h2>
         <p>Use subheadings to structure your article. This helps readers scan the content and find what they are looking for. You can also include lists:</p>
         <ul>
@@ -42,21 +129,21 @@
           <li>Another item.</li>
           <li>And a third one.</li>
         </ul>
-        
+
         <h3>A smaller subheading (h3)</h3>
         <p>For more granular sections, you can use an h3. You might want to include a code block for technical posts:</p>
-        
+
 <pre><code class="language-python"># This is a Python code block
 def hello_world():
     print("Hello from my new blog!")
 
 hello_world()
 </code></pre>
-        
+
         <blockquote>This is a blockquote. It's great for highlighting a key takeaway, a quote, or an important note that you want to stand out from the rest of the text.</blockquote>
-        
+
         <p>And that's it! You have a fully styled, readable blog post that matches the rest of your website's design.</p>
-        
+
       </article>
     </main>
   </div>
