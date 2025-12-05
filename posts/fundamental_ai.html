@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- Change the title for each post -->
+  <title>Your Post Title Here — Pratham Thakkar</title>
+
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../blog.css">
+
+  <!-- Small PDF viewer styles (responsive) -->
+  <style>
+    /* PDF container: keeps the PDF responsive and visually integrated */
+    .pdf-wrapper {
+      margin: 1.5rem 0;
+    }
+    .pdf-toolbar {
+      display: flex;
+      gap: .5rem;
+      align-items: center;
+      margin-bottom: .5rem;
+      flex-wrap: wrap;
+    }
+    .pdf-actions {
+      margin-left: auto;
+      display: flex;
+      gap: .5rem;
+    }
+    .pdf-frame {
+      width: 100%;
+      height: 80vh; /* tall enough for reading; reduce if needed */
+      border: 1px solid #e6e6e6;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    }
+
+    /* On small screens, reduce height so footer is reachable */
+    @media (max-width: 700px) {
+      .pdf-frame { height: 60vh; }
+    }
+
+    /* Simple button look — relies on your site's typography/colors */
+    .btn {
+      display: inline-block;
+      padding: .4rem .75rem;
+      border-radius: 6px;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: #fff;
+      text-decoration: none;
+      font-size: .9rem;
+    }
+    .btn-primary {
+      background: #0b5fff;
+      color: #fff;
+      border-color: rgba(11,95,255,0.9);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="header-container">
+      <a href="../index.html" class="header-logo">Pratham Thakkar</a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="../publications.html">Publications</a>
+        <a href="../portfolio.html">Projects</a>
+        <a href="#">Projects</a>
+        <a href="../blog.html" class="active">Blog Posts</a>
+        <a href="https://drive.google.com/file/d/1uBTU7bvWKlKKOYdXSy8Sloe7SW0rz4UO/view" class="cv-button">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <main class="page-content" role="main">
+      <!-- Article Content Starts Here -->
+      <article class="blog-article">
+        <header class="article-header">
+          <h1 class="article-title">Your Post Title Here</h1>
+          <p class="article-meta">Published on <time datetime="YYYY-MM-DD">Month Day, Year</time></p>
+        </header>
+
+        <p>This is the first paragraph of your blog post. You can write your main content here. Use paragraphs to separate your ideas and make the text easy to read. <strong>Strong text</strong> and <em>emphasized text</em> are styled as well.</p>
+
+        <h2>Embedded PDF (notes / supplementary material)</h2>
+        <p>Below is an embedded PDF hosted on Google Drive. If the browser cannot show it inline, there are buttons to open or download the file.</p>
+
+        <!-- ===== Google Drive PDF EMBED START ===== -->
+        <div class="pdf-wrapper" aria-labelledby="pdf-section-heading">
+          <div class="pdf-toolbar" role="toolbar" aria-label="PDF actions">
+            <div id="pdf-section-heading" style="font-weight:600">View / download PDF</div>
+            <div class="pdf-actions">
+              <!-- Open Drive preview in new tab -->
+              <a id="open-pdf" class="btn" href="https://drive.google.com/file/d/1nDsOXb9MnmlVA_asZUSZwHxxf9EJt7k3/view?usp=sharing" target="_blank" rel="noopener">Open in new tab</a>
+              <!-- Direct download link (Google export endpoint) -->
+              <a id="download-pdf" class="btn" href="https://drive.google.com/uc?export=download&id=1nDsOXb9MnmlVA_asZUSZwHxxf9EJt7k3" target="_blank" rel="noopener">Download PDF</a>
+            </div>
+          </div>
+
+          <!-- Drive preview iframe (preview endpoint is designed for embedding) -->
+          <iframe
+            id="pdfFrame"
+            class="pdf-frame"
+            src="https://drive.google.com/file/d/1nDsOXb9MnmlVA_asZUSZwHxxf9EJt7k3/preview"
+            title="Supplementary PDF: notes"
+            aria-describedby="pdf-frame-desc">
+          </iframe>
+
+          <div id="pdf-frame-desc" style="margin-top:.6rem;font-size:.95rem;color:#444">
+            If the inline view fails, <a href="https://drive.google.com/file/d/1nDsOXb9MnmlVA_asZUSZwHxxf9EJt7k3/view?usp=sharing" target="_blank" rel="noopener">open the PDF in Google Drive</a> or <a href="https://drive.google.com/uc?export=download&id=1nDsOXb9MnmlVA_asZUSZwHxxf9EJt7k3" target="_blank" rel="noopener">download it</a>.
+          </div>
+        </div>
+        <!-- ===== Google Drive PDF EMBED END ===== -->
+
+        <h2>This is a Subheading (h2)</h2>
+        <p>Use subheadings to structure your article. This helps readers scan the content and find what they are looking for. You can also include lists:</p>
+        <ul>
+          <li>An item in an unordered list.</li>
+          <li>Another item.</li>
+          <li>And a third one.</li>
+        </ul>
+
+        <h3>A smaller subheading (h3)</h3>
+        <p>For more granular sections, you can use an h3. You might want to include a code block for technical posts:</p>
+
+<pre><code class="language-python"># This is a Python code block
+def hello_world():
+    print("Hello from my new blog!")
+
+hello_world()
+</code></pre>
+
+        <blockquote>This is a blockquote. It's great for highlighting a key takeaway, a quote, or an important note that you want to stand out from the rest of the text.</blockquote>
+
+        <p>And that's it! You have a fully styled, readable blog post that matches the rest of your website's design.</p>
+
+      </article>
+    </main>
+  </div>
+
+</body>
+</html>
