@@ -83,44 +83,34 @@
         <p>This is the first paragraph of your blog post. You can write your main content here. Use paragraphs to separate your ideas and make the text easy to read. <strong>Strong text</strong> and <em>emphasized text</em> are styled as well.</p>
 
         <h2>Embedded PDF (notes / supplementary material)</h2>
-        <p>Below is an embedded PDF. If the browser cannot show it inline, there are buttons to open or download the file.</p>
+        <p>Below is an embedded PDF hosted on Google Drive. If the browser cannot show it inline, there are buttons to open or download the file.</p>
 
-        <!-- ===== PDF EMBED START ===== -->
-        <!-- Replace the path in data-pdf-path with your PDF relative path.
-             Example paths:
-               - ../assets/notes/myfile.pdf
-               - assets/notes/myfile.pdf
-               - myfile.pdf
-        -->
+        <!-- ===== Google Drive PDF EMBED START ===== -->
         <div class="pdf-wrapper" aria-labelledby="pdf-section-heading">
           <div class="pdf-toolbar" role="toolbar" aria-label="PDF actions">
-            <div id="pdf-section-heading" style="font-weight:600">Download / open PDF</div>
+            <div id="pdf-section-heading" style="font-weight:600">View / download PDF</div>
             <div class="pdf-actions">
-              <!-- Open in new tab (viewer) -->
-              <a id="open-pdf" class="btn" href="../assets/notes/myfile.pdf" target="_blank" rel="noopener">Open in new tab</a>
-              <!-- Download link -->
-              <a id="download-pdf" class="btn" href="../assets/notes/myfile.pdf" download>Download PDF</a>
-              <!-- Fallback: raw GitHub URL note (display only) -->
-              <span style="align-self:center;font-size:.9rem;color:#666;margin-left:.5rem">If inline viewer fails, open in a new tab.</span>
+              <!-- Open Drive preview in new tab -->
+              <a id="open-pdf" class="btn" href="https://drive.google.com/file/d/1nDsOXb9MnmlVA_asZUSZwHxxf9EJt7k3/view?usp=sharing" target="_blank" rel="noopener">Open in new tab</a>
+              <!-- Direct download link (Google export endpoint) -->
+              <a id="download-pdf" class="btn" href="https://drive.google.com/uc?export=download&id=1nDsOXb9MnmlVA_asZUSZwHxxf9EJt7k3" target="_blank" rel="noopener">Download PDF</a>
             </div>
           </div>
 
-          <!-- Use <iframe> or <object> as fallback; both point to the same file path.
-               Many browsers will render the PDF inline. If not, the 'Open in new tab' link is the fallback.
-          -->
+          <!-- Drive preview iframe (preview endpoint is designed for embedding) -->
           <iframe
             id="pdfFrame"
             class="pdf-frame"
-            src="../assets/notes_pdf/the_fundamentals_of_ai.pdf#toolbar=0&navpanes=0&scrollbar=0"
+            src="https://drive.google.com/file/d/1nDsOXb9MnmlVA_asZUSZwHxxf9EJt7k3/preview"
             title="Supplementary PDF: notes"
             aria-describedby="pdf-frame-desc">
           </iframe>
 
           <div id="pdf-frame-desc" style="margin-top:.6rem;font-size:.95rem;color:#444">
-            Can't view the PDF here? <a href="notes_pdf/the_fundamentals_of_ai.pdf" target="_blank" rel="noopener">Open it in a new tab</a> or <a href="../assets/notes/myfile.pdf" download>download it</a>.
+            If the inline view fails, <a href="https://drive.google.com/file/d/1nDsOXb9MnmlVA_asZUSZwHxxf9EJt7k3/view?usp=sharing" target="_blank" rel="noopener">open the PDF in Google Drive</a> or <a href="https://drive.google.com/uc?export=download&id=1nDsOXb9MnmlVA_asZUSZwHxxf9EJt7k3" target="_blank" rel="noopener">download it</a>.
           </div>
         </div>
-        <!-- ===== PDF EMBED END ===== -->
+        <!-- ===== Google Drive PDF EMBED END ===== -->
 
         <h2>This is a Subheading (h2)</h2>
         <p>Use subheadings to structure your article. This helps readers scan the content and find what they are looking for. You can also include lists:</p>
